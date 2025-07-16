@@ -1,0 +1,6 @@
+import AsposePdf from 'asposepdfnodejs';
+const AsposePdfModule = await AsposePdf();
+const pdf_file = 'Aspose.pdf';
+/*Convert a PDF-file to TeX and save the "ResultPDFtoTeX.tex"*/
+const json = AsposePdfModule.AsposePdfToTeX(pdf_file, "ResultPDFtoTeX.tex");
+console.log("AsposePdfToTeX => %O", json.errorCode == 0 ? json.fileNameResult : json.errorText);
