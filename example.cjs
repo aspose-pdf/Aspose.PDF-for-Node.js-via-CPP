@@ -124,6 +124,10 @@ AsposePdf().then(AsposePdfModule => {
     json = AsposePdfModule.AsposePdfPagesToPDF(pdf_file, resultdir + "ResultPdfToPDF{0:D2}.pdf");
     console.log("25. AsposePdfPagesToPDF => %O", json.errorCode == 0 ? json.filesNameResult : json.errorText);
 
+    //AsposePdfToMarkdown - Convert a PDF-file to Markdown
+    json = AsposePdfModule.AsposePdfToMarkdown(pdf_file, resultdir + "ResultPdfToMarkdown.md");
+    console.log("26. AsposePdfToMarkdown => %O", json.errorCode == 0 ? json.fileNameResult : json.errorText);
+
     /*Convert to PDF*/
     console.log("Convert to PDF:");
 
