@@ -128,6 +128,10 @@ console.log("25. AsposePdfPagesToPDF => %O", json.errorCode == 0 ? json.filesNam
 json = AsposePdfModule.AsposePdfToMarkdown(pdf_file, resultdir + "ResultPdfToMarkdown.md");
 console.log("26. AsposePdfToMarkdown => %O", json.errorCode == 0 ? json.fileNameResult : json.errorText);
 
+//AsposePdfToDocXEnhanced - Convert a PDF-file to DocX with Enhanced Recognition Mode (fully editable tables and paragraphs)
+json = AsposePdfModule.AsposePdfToDocXEnhanced(pdf_file, resultdir + "ResultPdfToDocXEnhanced.docx");
+console.log("27. AsposePdfToDocXEnhanced => %O", json.errorCode == 0 ? json.fileNameResult : json.errorText);
+
 /*Convert to PDF*/
 console.log("Convert to PDF:");
 
