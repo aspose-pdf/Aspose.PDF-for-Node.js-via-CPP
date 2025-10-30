@@ -26,5 +26,6 @@ const json = AsposePdfModule.AsposePdfGetInfo(pdf_file);
    Metadata count    : json.metadatacount
    JavaScript count  : json.javascriptcount
    Image count       : json.imagecount
+   Table count       : json.tablecount
 */
 console.log("AsposePdfGetInfo => %O", json.errorCode == 0 ? 'Title: ' + json.title : json.errorText);

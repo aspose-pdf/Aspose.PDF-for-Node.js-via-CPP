@@ -298,6 +298,10 @@ AsposePdf().then(AsposePdfModule => {
     json = AsposePdfModule.AsposePdfOptimizeFileSize(pdf_file, 50, resultdir + "ResultPdfOptimizeFileSize.pdf");
     console.log("38. AsposePdfOptimizeFileSize => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
 
+    //AsposePdfDeleteTables - Delete tables from a PDF-file
+    json = AsposePdfModule.AsposePdfDeleteTables(pdf_file, resultdir + "ResultPdfDeleteTables.pdf");
+    console.log("39. AsposePdfDeleteTables => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
+
     /*Metadata PDF*/
     console.log("Metadata PDF:");
 
