@@ -302,6 +302,10 @@ AsposePdf().then(AsposePdfModule => {
     json = AsposePdfModule.AsposePdfDeleteTables(pdf_file, resultdir + "ResultPdfDeleteTables.pdf");
     console.log("39. AsposePdfDeleteTables => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
 
+    //AsposePdfCropPages - Crop PDF-pages
+    json = AsposePdfModule.AsposePdfCropPages(pdf_file, 0.5, resultdir + "ResultPdfCropPages.pdf");
+    console.log("40. AsposePdfCropPages => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
+
     /*Metadata PDF*/
     console.log("Metadata PDF:");
 
