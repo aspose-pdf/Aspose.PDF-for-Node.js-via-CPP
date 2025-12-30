@@ -306,6 +306,14 @@ console.log("39. AsposePdfDeleteTables => %O",  json.errorCode == 0 ? json.fileN
 json = AsposePdfModule.AsposePdfCropPages(pdf_file, 0.5, resultdir + "ResultPdfCropPages.pdf");
 console.log("40. AsposePdfCropPages => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
 
+//AsposePdfDeleteTextHeaders - Delete text headers from a PDF-file
+json = AsposePdfModule.AsposePdfDeleteTextHeaders(resultdir + "ResultPdfAddHeaderFooter.pdf", resultdir + "AsposePdfDeleteTextHeaders.pdf");
+console.log("41. AsposePdfDeleteTextHeaders => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
+
+//AsposePdfDeleteTextFooters - Delete text footers from a PDF-file
+json = AsposePdfModule.AsposePdfDeleteTextFooters(resultdir + "ResultPdfAddHeaderFooter.pdf", resultdir + "AsposePdfDeleteTextFooters.pdf");
+console.log("42. AsposePdfDeleteTextFooters => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
+
 /*Metadata PDF*/
 console.log("Metadata PDF:");
 
