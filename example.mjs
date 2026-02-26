@@ -314,6 +314,10 @@ console.log("41. AsposePdfDeleteTextHeaders => %O",  json.errorCode == 0 ? json.
 json = AsposePdfModule.AsposePdfDeleteTextFooters(resultdir + "ResultPdfAddHeaderFooter.pdf", resultdir + "AsposePdfDeleteTextFooters.pdf");
 console.log("42. AsposePdfDeleteTextFooters => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
 
+//AsposePdfReplaceTextEx - Replace multiple text fragments in a PDF-file with alignment control
+json = AsposePdfModule.AsposePdfReplaceTextEx(pdf_file, [{findText: 'Aspose', replaceText: 'ASPOSE'}, {findText: 'Node', replaceText: 'NODE'}, {findText: 'ECMAScript', replaceText: '\u200FScript'}], {numPages: 1, alignment: "auto"}, resultdir + "ResultPdfReplaceTextEx.pdf");
+console.log("43. AsposePdfReplaceTextEx => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
+
 /*Metadata PDF*/
 console.log("Metadata PDF:");
 
