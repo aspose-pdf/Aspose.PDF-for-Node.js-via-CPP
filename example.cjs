@@ -318,6 +318,10 @@ AsposePdf().then(AsposePdfModule => {
     json = AsposePdfModule.AsposePdfReplaceTextEx(pdf_file, [{findText: 'Aspose', replaceText: 'ASPOSE'}, {findText: 'Node', replaceText: 'NODE'}, {findText: 'ECMAScript', replaceText: '\u200FScript'}], {numPages: 1, alignment: "auto"}, resultdir + "ResultPdfReplaceTextEx.pdf");
     console.log("43. AsposePdfReplaceTextEx => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
 
+    //AsposePdfRecover - Recover a PDF-file structure and trims invalid data
+    json = AsposePdfModule.AsposePdfRecover(pdf_file, resultdir + "ResultPdfRecover.pdf");
+    console.log("44. AsposePdfRecover => %O",  json.errorCode == 0 ? JSON.parse(JSON.stringify(json).replace('"errorCode":0,"errorText":"",','')) : json.errorText);
+
     /*Metadata PDF*/
     console.log("Metadata PDF:");
 
