@@ -1,5 +1,5 @@
 /*
- * Aspose.PDF for Node.js via C++ 26.3 release
+ * Aspose.PDF for Node.js via C++ 26.4 release
  */
 
 
