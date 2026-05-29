@@ -322,6 +322,10 @@ console.log("43. AsposePdfReplaceTextEx => %O",  json.errorCode == 0 ? json.file
 json = AsposePdfModule.AsposePdfRecover(pdf_file, resultdir + "ResultPdfRecover.pdf");
 console.log("44. AsposePdfRecover => %O",  json.errorCode == 0 ? JSON.parse(JSON.stringify(json).replace('"errorCode":0,"errorText":"",','')) : json.errorText);
 
+//AsposePdfRebuildXrefAndTrailer - Rebuild a PDF-file cross-reference table and trailer structures
+json = AsposePdfModule.AsposePdfRebuildXrefAndTrailer(pdf_file, resultdir + "ResultPdfRebuildXrefAndTrailer.pdf");
+console.log("45. AsposePdfRebuildXrefAndTrailer => %O",  json.errorCode == 0 ? JSON.parse(JSON.stringify(json).replace('"errorCode":0,"errorText":"",','')) : json.errorText);
+
 /*Metadata PDF*/
 console.log("Metadata PDF:");
 

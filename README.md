@@ -66,6 +66,7 @@ Add PDF processing, manipulation, and conversion features to your Node.js applic
 
 - **Repair** corrupted or damaged PDF files.
 - **Recover** structure and trims invalid data.
+- **Rebuild Xref** cross-reference table and trailer structures.
 - **Generate PDF** from TXT or image files.
 - **Optimize** document resources and structure.
 - **Product info**: retrieve library info, version, and capabilities.
