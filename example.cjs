@@ -376,13 +376,16 @@ AsposePdf().then(AsposePdfModule => {
     //AsposePdfSignPKCS7
     json = AsposePdfModule.AsposePdfSignPKCS7(pdf_file, 1, test_pfx_file, "Pa$$w0rd2023", 100, 100, 200, 100, "Reason", "Contact", "Location", 1, sign_png_file, resultdir + "ResultPdfSignPKCS7.pdf");
     console.log("03. AsposePdfSignPKCS7 => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
+    //AsposePdfSignPKCS7Detached
+    json = AsposePdfModule.AsposePdfSignPKCS7Detached(pdf_file, 1, test_pfx_file, "Pa$$w0rd2023", 100, 100, 200, 100, "Reason", "Contact", "Location", 1, sign_png_file, resultdir + "ResultPdfSignPKCS7Detached.pdf");
+    console.log("04. AsposePdfSignPKCS7Detached => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
     //delete tmp files
     fs.unlinkSync(test_pfx_file);
     fs.unlinkSync(sign_png_file);
 
     //AsposePdfChangePassword - Change passwords of the PDF-file
     json = AsposePdfModule.AsposePdfChangePassword(resultdir + "ResultPdfEncrypt.pdf", "owner", "newuser", "newowner", resultdir + "ResultPdfChangePassword.pdf");
-    console.log("04. AsposePdfChangePassword => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
+    console.log("05. AsposePdfChangePassword => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
 
     },
     reason => {console.log(`The unknown error has occurred: ${reason}`);}
