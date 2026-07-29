@@ -326,6 +326,10 @@ AsposePdf().then(AsposePdfModule => {
     json = AsposePdfModule.AsposePdfRebuildXrefAndTrailer(pdf_file, resultdir + "ResultPdfRebuildXrefAndTrailer.pdf");
     console.log("45. AsposePdfRebuildXrefAndTrailer => %O",  json.errorCode == 0 ? JSON.parse(JSON.stringify(json).replace('"errorCode":0,"errorText":"",','')) : json.errorText);
 
+    //AsposePdfReversePages - Reverse the page order of a PDF-file
+    json = AsposePdfModule.AsposePdfReversePages(pdf_file, resultdir + "ResultPdfReversePages.pdf");
+    console.log("46. AsposePdfReversePages => %O",  json.errorCode == 0 ? JSON.parse(JSON.stringify(json).replace('"errorCode":0,"errorText":"",','')) : json.errorText);
+
     /*Metadata PDF*/
     console.log("Metadata PDF:");
 
