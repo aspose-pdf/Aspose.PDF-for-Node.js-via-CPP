@@ -334,6 +334,10 @@ console.log("46. AsposePdfReversePages => %O",  json.errorCode == 0 ? JSON.parse
 json = AsposePdfModule.AsposePdfReorderPages(resultdir + "ResultPdfMerge.pdf", resultdir + "ResultPdfReorderPages.pdf", [2,1]);
 console.log("47. AsposePdfReorderPages => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
 
+//AsposePdfRedactText - Permanently redact and black out sensitive text in a PDF-file
+json = AsposePdfModule.AsposePdfRedactText(pdf_file, "aspose|pdf", resultdir + "ResultPdfRedactText.pdf");
+console.log("48. AsposePdfRedactText => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
+
 /*Metadata PDF*/
 console.log("Metadata PDF:");
 
