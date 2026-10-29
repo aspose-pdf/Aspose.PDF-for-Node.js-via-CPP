@@ -399,6 +399,10 @@ AsposePdf().then(AsposePdfModule => {
     json = AsposePdfModule.AsposePdfChangePassword(resultdir + "ResultPdfEncrypt.pdf", "owner", "newuser", "newowner", resultdir + "ResultPdfChangePassword.pdf");
     console.log("05. AsposePdfChangePassword => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
 
+    //AsposePdfRemoveSigns - Remove all digital signatures from a PDF-file
+    json = AsposePdfModule.AsposePdfRemoveSigns(resultdir + "ResultPdfSignPKCS7.pdf", resultdir + "ResultPdfRemoveSigns.pdf");
+    console.log("06. AsposePdfRemoveSigns => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
+
     },
     reason => {console.log(`The unknown error has occurred: ${reason}`);}
 );
