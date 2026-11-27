@@ -376,6 +376,10 @@ console.log("01. AsposePdfEncrypt => %O",  json.errorCode == 0 ? json.fileNameRe
 json = AsposePdfModule.AsposePdfDecrypt(resultdir + "ResultPdfEncrypt.pdf", "owner", resultdir + "ResultPdfDecrypt.pdf");
 console.log("02. AsposePdfDecrypt => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
 
+//AsposePdfChangePassword - Change passwords of the PDF-file
+json = AsposePdfModule.AsposePdfChangePassword(resultdir + "ResultPdfEncrypt.pdf", "owner", "newuser", "newowner", resultdir + "ResultPdfChangePassword.pdf");
+console.log("03. AsposePdfChangePassword => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
+
 //AsposePdfSignPKCS7 - Sign a PDF-file with digital signatures
 //Key PKCS7 for test, converted to Base64, with "Pa$$w0rd2023" password
 const test_pfx_file = resultdir +'sign.pfx';
@@ -387,18 +391,18 @@ const sign_png_data = "iVBORw0KGgoAAAANSUhEUgAAAGQAAAAyCAIAAAAlV+npAAAAAXNSR0IAr
 fs.writeFileSync(sign_png_file, sign_png_data, {encoding: 'base64'});
 //AsposePdfSignPKCS7
 json = AsposePdfModule.AsposePdfSignPKCS7(pdf_file, 1, test_pfx_file, "Pa$$w0rd2023", 100, 100, 200, 100, "Reason", "Contact", "Location", 1, sign_png_file, resultdir + "ResultPdfSignPKCS7.pdf");
-console.log("03. AsposePdfSignPKCS7 => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
+console.log("04. AsposePdfSignPKCS7 => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
 //AsposePdfSignPKCS7Detached
 json = AsposePdfModule.AsposePdfSignPKCS7Detached(pdf_file, 1, test_pfx_file, "Pa$$w0rd2023", 100, 100, 200, 100, "Reason", "Contact", "Location", 1, sign_png_file, resultdir + "ResultPdfSignPKCS7Detached.pdf");
-console.log("04. AsposePdfSignPKCS7Detached => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
+console.log("05. AsposePdfSignPKCS7Detached => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
 //delete tmp files
 fs.unlinkSync(test_pfx_file);
 fs.unlinkSync(sign_png_file);
 
-//AsposePdfChangePassword - Change passwords of the PDF-file
-json = AsposePdfModule.AsposePdfChangePassword(resultdir + "ResultPdfEncrypt.pdf", "owner", "newuser", "newowner", resultdir + "ResultPdfChangePassword.pdf");
-console.log("05. AsposePdfChangePassword => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
-
 //AsposePdfRemoveSigns - Remove all digital signatures from a PDF-file
 json = AsposePdfModule.AsposePdfRemoveSigns(resultdir + "ResultPdfSignPKCS7.pdf", resultdir + "ResultPdfRemoveSigns.pdf");
 console.log("06. AsposePdfRemoveSigns => %O",  json.errorCode == 0 ? json.fileNameResult : json.errorText);
+
+//AsposePdfVerifySigns - Verify the validity of digital signatures in a PDF-file
+json = AsposePdfModule.AsposePdfVerifySigns(resultdir + "ResultPdfSignPKCS7.pdf");
+console.log("07. AsposePdfVerifySigns => signs: %O",  json.errorCode == 0 ?  json.signs : json.errorText);
